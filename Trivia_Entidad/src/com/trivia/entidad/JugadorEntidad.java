@@ -1,14 +1,36 @@
 package com.trivia.entidad;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 import com.trivia.transversal.utilitario.UtilTexto;
 
+@Entity
+@Table(name = "jugador", schema = "public")
 public class JugadorEntidad 
 {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO, generator="jugador_codigo_seq")
+	@SequenceGenerator(name="jugador_codigo_seq", sequenceName="jugador_codigo_seq", allocationSize=1)
+	@Column(name = "codigo")
 	private int codigo;
+	@Column
 	private String nombre;
+	@Column
 	private String apellidos;
+	@Column
 	private String correo;
+	@Column
 	private String clave;
+	
+	public JugadorEntidad()
+	{
+		
+	}
 	
 	private JugadorEntidad(int codigo, String nombre, String apellidos, String correo, String clave) 
 	{

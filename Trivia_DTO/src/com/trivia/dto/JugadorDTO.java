@@ -10,6 +10,11 @@ public class JugadorDTO
 	private String correo;
 	private String clave;
 	
+	public JugadorDTO() 
+	{
+		
+	}
+	
 	private JugadorDTO(int codigo, String nombre, String apellidos, String correo, String clave) 
 	{
 		setCodigo(codigo);
